@@ -22,7 +22,6 @@ public class NormalizedStringUtility {
 
         int[][] table = new int[rowCount][columnCount];
 
-        //[row][column]
 
 
         //Initialize the table =============
@@ -40,11 +39,11 @@ public class NormalizedStringUtility {
 
 
         //MAIN TABLE GENERATION
-        for(int rowIndex = 1; rowIndex < y.length(); rowIndex++){
+        for(int rowIndex = 1; rowIndex < rowCount; rowIndex++){
 
-            for(int columnIndex = 1; columnIndex < x.length(); columnIndex++){
+            for(int columnIndex = 1; columnIndex < columnCount; columnIndex++){
 
-                if(x.charAt(columnIndex) == y.charAt(rowIndex)){
+                if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
                     // If the two symbols are equal, we copy the diagonal top-left value to the new cell.
                     table[rowIndex][columnIndex] = table[rowIndex - 1][columnIndex - 1];
                 }else{
@@ -87,16 +86,6 @@ public class NormalizedStringUtility {
 
         return table;
     }
-
-
-/*
-0.444444
-n c a r n a
-n c a o n a
-
- */
-
-
 
 
 }
