@@ -1,14 +1,16 @@
 package com.alexanderpinkerton;
 
+import java.util.Stack;
+
 /**
  * Created by Ace on 3/26/15.
  */
-public class NormalizedStringUtility {
+public class StringComparisonUtility {
 
 
 
 
-    public NormalizedStringUtility(){
+    public StringComparisonUtility(){
 
     }
 
@@ -86,6 +88,63 @@ public class NormalizedStringUtility {
 
         return table;
     }
+
+
+
+
+    public String findLCS(String x, String y){
+
+        int[][] table = computeEditDistanceTable(x,y);
+
+        Stack<Character> substring = new Stack<Character>();
+
+        for(int columnIndex = x.length() + 1, rowIndex = y.length() + 1; columnIndex > 0 && rowIndex > 0; columnIndex--,rowIndex--){
+
+            int top = table[rowIndex-1][columnIndex];
+            int left = table[rowIndex][columnIndex-1];
+
+            //If the symbols are equal, push the symbol on to a stack and move to the diagonal top-left neighbor.
+            if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
+                substring.push(x.charAt(columnIndex-1));
+            }else if(top == left){
+                substring.push(x.charAt(columnIndex-1));
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        return "dingleberry";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

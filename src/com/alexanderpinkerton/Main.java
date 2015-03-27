@@ -5,14 +5,11 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        NormalizedStringUtility utility = new NormalizedStringUtility();
+        StringComparisonUtility utility = new StringComparisonUtility();
 
         //utility.computeEditDistanceTable("ncaatournament","northcarolina");
 
         utility.computeEditDistanceTable("agtacgtcat","gtatcgtat");
-
-
-
 
 
     }
