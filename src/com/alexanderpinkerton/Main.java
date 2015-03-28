@@ -9,8 +9,9 @@ public class Main {
 
         //utility.computeEditDistanceTable("ncaatournament","northcarolina");
 
-        utility.computeEditDistanceTable("agtacgtcat","gtatcgtat");
+        //utility.computeEditDistanceTable("agtacgtcat","gtatcgtat");
 
+        System.out.print(utility.findLCS("agtacgtcat","gtatcgtat"));
 
     }
 

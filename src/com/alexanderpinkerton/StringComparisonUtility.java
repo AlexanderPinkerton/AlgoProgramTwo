@@ -106,23 +106,22 @@ public class StringComparisonUtility {
             //If the symbols are equal, push the symbol on to a stack and move to the diagonal top-left neighbor.
             if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
                 substring.push(x.charAt(columnIndex-1));
-            }else if(top == left){
-                substring.push(x.charAt(columnIndex-1));
+                System.out.print("Diagonal Movement to " + table[rowIndex-1][columnIndex-1]);
+            }else if(top==left){
+                rowIndex++;
+                System.out.print("Left Movement to " + table[rowIndex][columnIndex-1]);
+            }else if(top>left){
+                rowIndex++;
+                System.out.print("Left Movement to " + table[rowIndex][columnIndex-1]);
+            }else{
+                columnIndex++;
+                System.out.print("Upward Movement to " + table[rowIndex-1][columnIndex]);
             }
-
 
         }
 
 
-
-
-
-
-
-
-
-
-        return "dingleberry";
+        return substring.toString();
     }
 
 
