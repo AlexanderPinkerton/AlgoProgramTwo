@@ -8,13 +8,6 @@ import java.util.Stack;
 public class StringComparisonUtility {
 
 
-
-
-    public StringComparisonUtility(){
-
-    }
-
-
     public int[][] computeEditDistanceTable(String x, String y){
 
         //Initialize the table to the size based on the input.
@@ -70,9 +63,7 @@ public class StringComparisonUtility {
             System.out.print(x.charAt(i) + " ");
         }
 
-
         System.out.println();
-
 
         for(int i=0;i<rowCount;i++){
             for(int j=0;j<columnCount;j++){
@@ -85,7 +76,6 @@ public class StringComparisonUtility {
         //================DEBUG OUTPUT================
 
 
-
         return table;
     }
 
@@ -94,15 +84,13 @@ public class StringComparisonUtility {
 
     public String findLCS(String x, String y){
 
+        //TODO Use linear memory.
+
         int[][] table = computeEditDistanceTable(x,y);
 
         Stack<Character> substring = new Stack<Character>();
 
         for(int columnIndex = x.length(), rowIndex = y.length(); columnIndex > 0 && rowIndex > 0; columnIndex--,rowIndex--){
-
-            //System.out.println("columnIndex: " + columnIndex);
-            //System.out.println("rowIndex: " + rowIndex);
-
 
             int top = table[rowIndex-1][columnIndex];
             int left = table[rowIndex][columnIndex-1];
@@ -123,7 +111,6 @@ public class StringComparisonUtility {
             }
 
         }
-
 
         return substring.toString();
     }
