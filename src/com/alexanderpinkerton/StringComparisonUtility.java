@@ -98,7 +98,11 @@ public class StringComparisonUtility {
 
         Stack<Character> substring = new Stack<Character>();
 
-        for(int columnIndex = x.length() + 1, rowIndex = y.length() + 1; columnIndex > 0 && rowIndex > 0; columnIndex--,rowIndex--){
+        for(int columnIndex = x.length(), rowIndex = y.length(); columnIndex > 0 && rowIndex > 0; columnIndex--,rowIndex--){
+
+            //System.out.println("columnIndex: " + columnIndex);
+            //System.out.println("rowIndex: " + rowIndex);
+
 
             int top = table[rowIndex-1][columnIndex];
             int left = table[rowIndex][columnIndex-1];
@@ -106,16 +110,16 @@ public class StringComparisonUtility {
             //If the symbols are equal, push the symbol on to a stack and move to the diagonal top-left neighbor.
             if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
                 substring.push(x.charAt(columnIndex-1));
-                System.out.print("Diagonal Movement to " + table[rowIndex-1][columnIndex-1]);
+                System.out.println("Diagonal Movement");
             }else if(top==left){
                 rowIndex++;
-                System.out.print("Left Movement to " + table[rowIndex][columnIndex-1]);
+                System.out.println("Left Movement");
             }else if(top>left){
                 rowIndex++;
-                System.out.print("Left Movement to " + table[rowIndex][columnIndex-1]);
+                System.out.println("Left Movement");
             }else{
                 columnIndex++;
-                System.out.print("Upward Movement to " + table[rowIndex-1][columnIndex]);
+                System.out.println("Upward Movement");
             }
 
         }

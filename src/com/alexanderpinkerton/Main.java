@@ -7,11 +7,16 @@ public class Main {
 
         StringComparisonUtility utility = new StringComparisonUtility();
 
-        //utility.computeEditDistanceTable("ncaatournament","northcarolina");
+        //Example One
+        //System.out.print(utility.findLCS("agttgtagct","agtgctact"));
 
-        //utility.computeEditDistanceTable("agtacgtcat","gtatcgtat");
+         /*Example Two      0.444444        n c a r n a     n c a o n a     */
+        System.out.print(utility.findLCS("ncaatournament","northcarolina"));
 
-        System.out.print(utility.findLCS("agtacgtcat","gtatcgtat"));
+
+
+        //Document Example
+        //System.out.print(utility.findLCS("agtacgtcat","gtatcgtat"));
 
     }
 
