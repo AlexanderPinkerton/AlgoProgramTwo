@@ -8,15 +8,18 @@ public class Main {
         StringComparisonUtility utility = new StringComparisonUtility();
 
         //Example One
-        //System.out.print(utility.findLCS("agttgtagct","agtgctact"));
+        System.out.println(utility.findLCS("agttgtagct","agtgctact"));
+        utility.computeEditDistance("agttgtagct","agtgctact");
 
          /*Example Two      0.444444        n c a r n a     n c a o n a     */
-        System.out.print(utility.findLCS("ncaatournament","northcarolina"));
+        //System.out.println(utility.findLCS("ncaatournament","northcarolina"));
+        //utility.computeEditDistance("ncaatournament","northcarolina");
 
 
 
         //Document Example
-        //System.out.print(utility.findLCS("agtacgtcat","gtatcgtat"));
+        //System.out.println(utility.findLCS("agtacgtcat","gtatcgtat"));
+        //utility.computeEditDistance("agtacgtcat","gtatcgtat");
 
     }
 

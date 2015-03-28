@@ -8,6 +8,86 @@ import java.util.Stack;
 public class StringComparisonUtility {
 
 
+    public float computeEditDistance(String x, String y){
+
+        int columnCount = x.length()+1;
+        int rowCount = y.length()+1;
+
+        int[] rowOne = new int[columnCount];
+        int[] rowTwo = new int[columnCount];
+
+        //Populate the first row.
+        for(int i=0;i<columnCount;i++){
+            rowOne[i] = i;
+        }
+
+
+        for(int rowIndex = 1; rowIndex < rowCount; rowIndex++){
+
+            //Insert the correct value for the first element on string y.
+            //Swap via even and odd checks.
+            if(rowIndex%2 == 0){
+                rowTwo[0] = rowIndex;
+            }else{
+                rowOne[0] = rowIndex;
+            }
+
+
+            for(int columnIndex = 1; columnIndex < columnCount; columnIndex++){
+
+                if(rowIndex%2 == 0){
+
+                    if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
+                        // If the two symbols are equal, we copy the diagonal top-left value to the new cell.
+                        rowOne[columnIndex] = rowTwo[columnIndex - 1];
+                    }else{
+                    /*If the two symbols are not equal, we examine the top cell and the left cell. We choose
+                    the cell with the smaller value, we add one to that value, and we copy the incremented
+                    value to the new cell.*/
+                        int top = rowTwo[columnIndex];
+                        int left = rowOne[columnIndex-1];
+                        rowOne[columnIndex] = (top > left) ? ++left : ++top;
+                    }
+
+                }else{
+
+                    if(x.charAt(columnIndex-1) == y.charAt(rowIndex-1)){
+                        // If the two symbols are equal, we copy the diagonal top-left value to the new cell.
+                        rowTwo[columnIndex] = rowOne[columnIndex - 1];
+                    }else{
+                    /*If the two symbols are not equal, we examine the top cell and the left cell. We choose
+                    the cell with the smaller value, we add one to that value, and we copy the incremented
+                    value to the new cell.*/
+                        int top = rowOne[columnIndex];
+                        int left = rowTwo[columnIndex-1];
+                        rowTwo[columnIndex] = (top > left) ? ++left : ++top;
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        for(int i=0;i<columnCount;i++){
+            System.out.print(rowOne[i] + " ");
+        }
+        System.out.println();
+        for(int i=0;i<columnCount;i++){
+            System.out.print(rowTwo[i] + " ");
+        }
+
+
+        return 69;
+    }
+
+
+
+
+
+
+
     public int[][] computeEditDistanceTable(String x, String y){
 
         //Initialize the table to the size based on the input.
