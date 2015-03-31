@@ -16,12 +16,12 @@ public class Main {
         //System.out.println(utility.computeEditDistance("agttgtagct","agtgctact"));
 
          /*Example Two      0.444444        n c a r n a     n c a o n a     */
-        //System.out.println(utility.findLCS("ncaatournament","northcarolina"));
-        //System.out.println(utility.computeEditDistance("ncaatournament","northcarolina"));
+        System.out.println(utility.findLCS("ncaatournament","northcarolina"));
+        System.out.println(utility.computeEditDistance("ncaatournament","northcarolina"));
 
-         /*Example Three    0.666667    a l g o r i t h m s r o c k s i l o v e t h i s c l a s s */
-        System.out.println(utility.findLCS("zalgoxrithmsrxocksxzilozxxvethzisclzaxzzsxs", "qalgoriythmsqrowwcksqqwqilowvqethiqsclqawssw"));
-        System.out.println(utility.computeEditDistance("zalgoxrithmsrxocksxzilozxxvethzisclzaxzzsxs","qalgoriythmsqrowwcksqqwqilowvqethiqsclqawssw"));
+        /*Example Three    0.666667    a l g o r i t h m s r o c k s i l o v e t h i s c l a s s */
+        //System.out.println(utility.findLCS("zalgoxrithmsrxocksxzilozxxvethzisclzaxzzsxs", "qalgoriythmsqrowwcksqqwqilowvqethiqsclqawssw"));
+        //System.out.println(utility.computeEditDistance("zalgoxrithmsrxocksxzilozxxvethzisclzaxzzsxs","qalgoriythmsqrowwcksqqwqilowvqethiqsclqawssw"));
 
 
 

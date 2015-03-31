@@ -72,7 +72,7 @@ public class StringComparisonUtility {
         }
 
         //(S1+S2-NED)/(S1+S2) = Normalized Edit Distance
-        float normalizedEditDistance = (x.length()+y.length()-forwardRow[columnCount-1]) / (float)(x.length() + y.length());
+        float normalizedEditDistance = (x.length()+y.length()-backwardRow[columnCount-1]) / (float)(x.length() + y.length());
 
         return normalizedEditDistance;
     }
