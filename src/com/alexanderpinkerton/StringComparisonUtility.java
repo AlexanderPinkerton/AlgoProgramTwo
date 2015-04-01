@@ -54,12 +54,12 @@ public class StringComparisonUtility {
             if(debug) {
                 if (rowIndex == 1) {
                     for (int i = 0; i < columnCount; i++) {
-                        System.out.print(backwardRow[i] + " ");
+                        System.out.print(backwardRow[i] + "\t");
                     }
-                    System.out.println("-----------B-------------");
+                    System.out.println("-----------B------------");
                 }
                 for (int i = 0; i < columnCount; i++) {
-                    System.out.print(forwardRow[i] + " ");
+                    System.out.print(forwardRow[i] + "\t");
                 }
                 System.out.println("-----------F------------");
             }
@@ -128,15 +128,14 @@ public class StringComparisonUtility {
         }
         //================DEBUG OUTPUT================
         if(debug) {
-            System.out.print("  ");
-            for (int i = 0; i < rowCount; i++) {
-                System.out.print(x.charAt(i) + " ");
+            System.out.print("\t");
+            for (int i = 0; i < columnCount-1; i++) {
+                System.out.print(x.charAt(i) + "\t");
             }
             System.out.println();
             for (int i = 0; i < rowCount; i++) {
                 for (int j = 0; j < columnCount; j++) {
-                    //if(j==0 && i<y.length() && i>0){System.out.print(y.charAt(i-1) + " ");}else if(i==0 && j==0){System.out.print("  ");}
-                    System.out.print(table[i][j] + " ");
+                    System.out.print(table[i][j] + "\t");
                 }
                 System.out.println();
             }
@@ -186,7 +185,7 @@ public class StringComparisonUtility {
 
         StringBuilder b = new StringBuilder();
         for (char value : substring) {
-            b.append(value);
+            b.append(value + " ");
         }
 
         return b.toString();
