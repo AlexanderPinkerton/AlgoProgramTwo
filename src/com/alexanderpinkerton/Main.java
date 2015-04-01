@@ -19,7 +19,7 @@ public class Main {
             System.out.println(utility.computeEditDistance(x,y));
             System.out.println(utility.findLCS(x,y));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Invalid or Missing File Arguments.");
         }
 
 
