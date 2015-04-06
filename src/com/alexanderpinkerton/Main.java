@@ -4,12 +4,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ *
+ * Created by Alexander Pinkerton on 3/26/15.
+ *
+ **/
+
+
 public class Main {
 
     public static void main(String[] args) {
 
         StringComparisonUtility utility = new StringComparisonUtility();
-        utility.setDebug(true);
+        //utility.setDebug(true);
 
         try {
             BufferedReader br1 = new BufferedReader(new FileReader(args[0]));

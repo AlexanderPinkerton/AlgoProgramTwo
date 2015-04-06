@@ -1,0 +1,24 @@
+Program Design
+    This program was designed to compute the Normalized Edit Distance and
+    the Longest common sub-sequence between two strings with ease and precision.
+    This program uses Dynamic Programming to keep the calculations at O( n^2 ) while
+    only requiring the use of linear memory. The two strings are provided into the
+    program by the use of command line arguments.
+
+
+File Breakdown
+    -Main.java: Program execution starting point, obtains strings and passes them to the utility class.
+
+    -StringComparisonUtility.java:  Utility class that has a few computation methods.
+        -computeEditDistance: This method will return the normalized edit distance computed with linear memory.
+        -computeEditDistanceTable This method will create and populate the entire dynamic programming calculations table.
+        -FindLCS: This method will use the full table and backtrace through it to obtain the LCS in O(n^2) time.
+
+
+What Works:
+    --All features.
+
+
+
+Data Structure Design:
+    I used standard int arrays as I do not need to resize them at any point. They are fast and efficient for this task.
